@@ -1,6 +1,9 @@
 # expenses
 
-App to maintain expenses
+App to maintain expenses.This app is an extension of what I learnt during a course on udemy.It's a modified version of app made
+for practise purpose only.
+We could add new transaction,we list of all added transactions as well as a pictorial representation in form of charts
+of the spending in list.
 
 ## Getting Started
 
