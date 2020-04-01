@@ -5,6 +5,14 @@ for practise purpose only.
 We could add new transaction,we list of all added transactions as well as a pictorial representation in form of charts
 of the spending in list.
 
+# A few of app snapshots
+x-special/nautilus-clipboard
+copy
+file:///home/rushilmakkar/Desktop/Screenshot_1585714845.png
+file:///home/rushilmakkar/Desktop/Screenshot_1585714743.png
+file:///home/rushilmakkar/Desktop/Screenshot_1585714528.png
+file:///home/rushilmakkar/Desktop/Screenshot_1585714735.png
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
