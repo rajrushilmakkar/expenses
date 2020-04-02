@@ -1,4 +1,4 @@
-import 'package:expenses/bars.dart';
+import 'package:expenses/widgets/bars.dart';
 import 'package:expenses/models/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -40,18 +40,19 @@ class charts extends StatelessWidget {
     //print(txns[0].price+txns[1].price);
     //print(daily_data);
     return Card(
-      elevation: 7,
-      margin: EdgeInsets.all(15),
-      child: Row(
-        children: daily_data.map((d_txn) {
-          if (week_amount != 0) {
-            return Bar(d_txn['day'], d_txn['amount'],
-                (d_txn['amount'] as double) / (week_amount));
-          } else {
-            return Bar(d_txn['day'], d_txn['amount'], 0.0);
-          }
-        }).toList(),
-      ),
-    );
+        elevation: 7,
+        margin: EdgeInsets.all(15),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: daily_data.map((d_txn) {
+      if (week_amount != 0) {
+        return Bar(d_txn['day'], d_txn['amount'],
+            (d_txn['amount'] as double) / (week_amount));
+      } else {
+        return Bar(d_txn['day'], d_txn['amount'], 0.0);
+      }
+    }).toList(),
+        ),
+      );
   }
 }

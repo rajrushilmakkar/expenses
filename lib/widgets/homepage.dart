@@ -1,6 +1,6 @@
 import 'package:expenses/models/transaction.dart';
-import 'package:expenses/new_transaction.dart';
-import 'package:expenses/transaction_list.dart';
+import 'package:expenses/widgets/new_transaction.dart';
+import 'package:expenses/widgets/transaction_list.dart';
 //import 'package:expenses/user_transactions.dart';
 import './charts.dart';
 import 'package:flutter/material.dart';
@@ -30,8 +30,10 @@ class _homepageState extends State<homepage> {
   void _deleteTransaction(String id) {
     setState(() {
       _txns.removeWhere((txn) {
-        if (txn.id == id) return true;
-        else return false;
+        if (txn.id == id)
+          return true;
+        else
+          return false;
       });
     });
   }
@@ -56,24 +58,29 @@ class _homepageState extends State<homepage> {
 
   @override
   Widget build(BuildContext context) {
+    final appBar = AppBar(
+      title: Text("Expenses Book"),
+    );
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Expenses Book"),
-      ),
-      body: SingleChildScrollView(
-              child: Column(
-            // mainAxisAlignment: MainAxisAlignment.spaceAround,
-            //: CrossAxisAlignment.center,
-            children: <Widget>[
-              charts(lastWeektxns),
-              Column(
+      appBar: appBar,
+      body: Column(
+        // mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //: CrossAxisAlignment.center,
         children: <Widget>[
-          //NewTransaction(_addtxn),
-          TransactionList(_txns,_deleteTransaction),
-        ],
-              ),
-            ],
+          Container(
+            child: charts(lastWeektxns),
+            height: (MediaQuery.of(context).size.height -
+                    MediaQuery.of(context).padding.top -
+                    appBar.preferredSize.height) *
+                0.3,
           ),
+          Container(
+              height: (MediaQuery.of(context).size.height -
+                      MediaQuery.of(context).padding.top -
+                      appBar.preferredSize.height) *
+                  0.7,
+              child: TransactionList(_txns, _deleteTransaction)),
+        ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
